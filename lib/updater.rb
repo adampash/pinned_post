@@ -10,9 +10,8 @@ module Updater
   end
 
   def self.run(url, blog_id)
-    now = DateTime.now - 1.second
-    timestamp = now.strftime('%Q').to_i
-    puts "Updating #{url}..."
+    timestamp = DateTime.now.strftime('%Q').to_i
+    puts "Updating #{url} for #{timestamp}..."
     result = client.update_post(url, {
       publishTimeMillis: timestamp,
       defaultBlogId: blog_id
