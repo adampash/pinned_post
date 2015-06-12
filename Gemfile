@@ -36,6 +36,7 @@ gem 'omniauth-google-oauth2'
 # Use Puma as the app server
 gem 'puma'
 gem 'sinatra', :require => nil
+gem "font-awesome-rails"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

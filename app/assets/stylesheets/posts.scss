@@ -19,6 +19,9 @@
     .description {
       flex: 8 0 0;
     }
+    input {
+      margin-left: 10px;
+    }
   }
   form.post {
     padding: 0px;
@@ -33,4 +36,8 @@
       flex: 1 0 0;
     }
   }
+}
+
+.hide {
+  display: none;
 }

@@ -1,5 +1,5 @@
 <nav>
-  <%= "Gawker Post Updater" %>
+  <h1 class="site">Gawker Post Updater</h1>
   <% if user_signed_in? %>
     <%= link_to raw('Logout <i class="fa fa-sign-out"></i>'), user_logout_path, class: 'logout' %>
   <% end %>
