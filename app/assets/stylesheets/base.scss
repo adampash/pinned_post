@@ -1,0 +1,74 @@
+@import 'type';
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  font-family: $sans;
+  font-weight: 400;
+  color: gray(35%);
+  text-rendering: optimizeLegibility;
+  word-wrap: break;
+}
+
+header {
+  a.active {
+    color: gray(60%);
+    text-decoration: none;
+    cursor: default;
+  }
+}
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.top_container {
+  max-width: 970px;
+  margin: 0 auto;
+}
+
+input:focus {
+  outline: none;
+}
+
+
+a.login {
+  text-rendering: optimizeLegibility;
+  background: #808080;
+  width: 400px;
+  display: block;
+  text-align: center;
+  padding: 16px;
+  margin: 200px auto 20px;
+  color: white;
+  text-transform: uppercase;
+  // font-weight: bold;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  &:hover {
+    background: #b3b3b3;
+  }
+}
+.login_message {
+  font-size: 15px;
+  color: #b3b3b3;
+  line-height: 20px;
+  margin: 0 auto;
+  width: 400px;
+}
