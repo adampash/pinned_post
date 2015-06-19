@@ -4,11 +4,20 @@
     e.stopPropagation()
     $.ajax
       method: "POST"
-      url: '/posts'
+      url: "/#{@props.site}"
       dataType: 'json'
       data: @state
       success: (response) =>
-        @props.handleNewPost response
+        if response?
+          @props.handleNewPost response
+          React.findDOMNode(@refs.description).value = ''
+          React.findDOMNode(@refs.url).value = ''
+          React.findDOMNode(@refs.url).focus()
+        else
+          alert "Something went wrong. Are you sure this post belongs to your site?"
+      error: (e) ->
+        alert "Something went wrong. Are you sure this post belongs to your site?"
+
 
   handleChange: (e) ->
     obj = {}
@@ -19,13 +28,15 @@
     `<div>
       <form action="/posts" className="post" onSubmit={this.handleSubmit}>
         <input
-          placeholder="Paste the url of the post you want to stick to the top"
+          placeholder="Url of the post you want to pin"
+          ref="url"
           onChange={this.handleChange}
           name="url"
         />
-        <input placeholder="Description" ref="name"
+        <input placeholder="Description"
           name="description"
           onChange={this.handleChange}
+          ref="description"
         />
         <button type="submit">Save</button>
       </form>

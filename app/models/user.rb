@@ -25,4 +25,8 @@ class User < ActiveRecord::Base
     user
   end
 
+  def site
+    email.match(/@(\w+).com/)[1]
+  end
+
 end

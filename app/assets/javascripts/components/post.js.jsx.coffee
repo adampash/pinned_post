@@ -19,6 +19,16 @@
         @setState
           loading: false
 
+  deletePost: (e) ->
+    remove = confirm "You sure you want to delete that?"
+    if remove
+      $.ajax
+        method: 'DELETE'
+        url: "/posts/#{@state.post.id}"
+        success: =>
+          @props.removePost(@state.post)
+
+
   getDomain: (url) ->
     url.match(/^https?:\/\/(\w+\.)?(\w+)\.com/)[2].toUpperCase()
 
@@ -39,7 +49,8 @@
         {loader}
         <input type="checkbox" onChange={this.handleClick}
           checked={this.state.live}
-        /> Live
+        /> Pinned
+        <i className="fa fa-trash-o" onClick={this.deletePost}></i>
       </div>
     </div>`
 

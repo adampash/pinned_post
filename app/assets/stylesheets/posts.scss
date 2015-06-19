@@ -12,10 +12,13 @@
     width: 100%;
     height: 35px;
     padding: 10px;
-    border-bottom: 1px solid #ccc;
+    // border-bottom: 1px solid #ccc;
     display: flex;
     flex-direction: row;
     align-items: stretch;
+    &:hover {
+      background: #E0E0E0;
+    }
     .description {
       flex: 8 0 0;
     }
@@ -40,4 +43,9 @@
 
 .hide {
   display: none;
+}
+
+.fa-trash-o {
+  margin-left: 10px;
+  cursor: pointer;
 }

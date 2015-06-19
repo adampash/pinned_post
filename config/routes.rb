@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   root 'pages#welcome'
   get 'logout' => 'users#logout', as: :user_logout
+  get ':site' => 'posts#index', as: :dashboard
+  post ':site' => 'posts#create'
 
   require 'sidekiq/web'
   authenticate :user do
