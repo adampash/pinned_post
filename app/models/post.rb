@@ -5,9 +5,10 @@ class Post < ActiveRecord::Base
 
   def self.create_from_params(options, user)
     post = Kinja.new.get_post(options[:url])
+
     url = post["data"]["permalink"]
     site = url.match(/^https?:\/\/(\w+\.)?(\w+)\.com/)[2]
-    if site == options[:site]
+    if site == options[:site] or site == 'kinja'
       kinja_id = post["data"]["id"]
       default_blog_id = post["data"]["defaultBlogId"]
       name = options[:description] or post["data"]["headline"]

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'logout' => 'users#logout', as: :user_logout
   get '(:site)' => 'posts#index', :constraints => {:site => /[0-9A-Za-z\-\.]+/}, as: :dashboard
 
-  post ':site' => 'posts#create'
+  post ':site' => 'posts#create', :constraints => {:site => /[0-9A-Za-z\-\.]+/}
 
   require 'sidekiq/web'
   authenticate :user do
