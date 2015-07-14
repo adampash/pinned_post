@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
   end
 
   def site
-    email.match(/@(\w+).com/)[1]
+    alt_domain || email.match(/@(\w+).com/)[1]
   end
 
 end
