@@ -19,6 +19,9 @@ module Updater
     puts result
   end
 
+
+
+
   def self.should_update?(date=DateTime.now)
     is_weekday?(date) or is_morning?(date)
   end
