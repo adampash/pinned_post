@@ -30,6 +30,7 @@ gem 'react-rails'
 
 gem 'devise'
 gem 'omniauth-google-oauth2'
+gem 'rollbar', '~> 1.2.7'
 gem 'newrelic_rpm'
 
 # Use ActiveModel has_secure_password
